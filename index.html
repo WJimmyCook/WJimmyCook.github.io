@@ -1,28 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Jimmy Cook - Software Developer</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Asap|Poppins" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/lightbox.min.css" rel="stylesheet">
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <h1>Hello, wofdsjflkdsjfdsrld!</h1>
+<body>
+    <div id="bar"></div>
+    <div class="container-fluid" id="mainContainer">
+        <div class="row text-center" id="name">
+            <h1>Jimmy Cook</h1>
+            <p id="jobTitle">Software Developer</p>
+        </div>
+        <div class="row text-center" id="socialLinks">
+            <a href="https://github.com/WJimmyCook" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/jimmy-cook" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a href="mailto:wjimmycook+web@gmail.com" target="_top"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+        </div>
+        <div class="row text-center" id="resumeLinks">
+            <i class="fa fa-file-pdf-o" aria-hidden="true"> PDF Resume</i>
+            <i class="fa fa-file-word-o" aria-hidden="true"> Word Resume</i>
+        </div>
+    </div>
+    <div class="container">
+        <div id="projectWrapper">
+            <h2 class="text-center" id="projectsHeader">Projects</h2>
+            <div class="project" id="vendingMachine">
+                <div class="row">
+                    <div class="projectInfo col-md-6">
+                        <h3 class="projectTitle">Vending Machine</h3>
+                        <h4 class="projectTags">Web App</h4>
+                        <h5 class="projectTech">Java, Spring, PostgreSQL, AngularJS, Bootstrap, HTML5, CSS3</h5>
+                        <p class="projectTextParagraph">
+                            This is my newest project. It is a CRUD web app that utilizes RESTful enpoints and AJAX calls.
+                            The backend is Java with the Spring MVC framework. The frontend is built with AngularJS.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="projectImage">
+                            <a class="gallery img-responsive" href="images/vending1.png" data-lightbox="vending"
+                            data-title="You can add money with the buttons on the top row. If an item has a quantity of 0 it's greyed out.">
+                                <img src="images/vending1.png" class="img-responsive img-thumbnail">
+                            </a>
+                            <a class="gallery img-responsive" href="images/vending2.png" data-lightbox="vending"
+                            data-title="When you make a selection the door slides open via animation. Clicking on the item will remove it
+                            from the vending machine. An ajax request is sent a REST endpoint to update the quantity. Clicking the gear in the bottom right will take you to the 'internals' of the machine"></a>
+                            <a class="gallery img-responsive" href="images/vending3.png" data-lightbox="vending" data-title="This is the list of all items added to the machine.
+                            You can create a new item via the add item button. You can edit, delete, and search the list. Each coloumn is also sortable."></a>
+                            <a class="gallery img-responsive" href="images/vending4.png" data-lightbox="vending" data-title="This screen shows
+                            how you can edit in place."></a>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+                        </div>
+
+                        <div class="projectButtons pull-right">
+                            <a target="_blank" href="http://github.com/WJimmyCook/vending-machine"><button class="btn btn-lg">GitHub</button></a>
+                            <a target="_blank" href="https://vending-machine.herokuapp.com/"><button class="btn btn-lg">Visit</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project" id="fishTank">
+                <div class="row">
+                    <div class="projectInfo col-md-6">
+                        <h3 class="projectTitle">Fish Tank</h3>
+                        <h4 class="projectTags">Web App</h4>
+                        <h5 class="projectTech">Java, Spring, MySQL, Bootstrap, HTML5, CSS3</h5>
+                        <p class="projectTextParagraph">
+                            Fish Tank is a CRUD web app that writes to a MySQL database. The backend is Java with the Spring MVC framework. The frontend is built with Bootstrap.
+                        </p>
+                    </div>
+                    <div class="projectImage col-md-6">
+                      <div class="projectImage">
+                          <a class="gallery img-responsive" href="images/fish1.png"  data-lightbox="fish"
+                          data-title="From this home screen you can add, edit, delete, or see more information on a fish.">
+                              <img src="images/fish1.png" class="img-responsive img-thumbnail">
+                          </a>
+                          <a class="gallery img-responsive" href="images/fish2.png"  data-lightbox="fish"
+                          data-title="When you click on the fish name link this is the modal that pops up showing more information.
+                          To get this info an AJAX request is sent to a REST endpoint getting the fish object."></a>
+                          <a class="gallery img-responsive" href="images/fish3.png"  data-lightbox="fish"
+                          data-title="This modal pops up when clicking on the edit link. This information is retrieved by an AJAX request
+                          to a REST endpoint. The returned info is filled in this editable form. Upon clicking the Edit Fish button an AJAX
+                          PUT request is sent to the server to update the database."></a>
+                          <a class="gallery img-responsive" href="images/fish4.png"  data-lightbox="fish" data-title="Utilizing Google Charts
+                          I added this bar graph showing the count of each fish type."></a>
+                          <a class="gallery img-responsive" href="images/fish5.png"  data-lightbox="fish" data-title="Search page works via
+                          an AJAX request and SQL queries"></a>
+                      </div>
+
+                        <div class="projectButtons pull-right">
+                            <a target="_blank" href="https://github.com/WJimmyCook/fish-tank"><button class="btn btn-lg">GitHub</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project" id="skateboardingTrickList">
+                <div class="row">
+                    <div class="projectInfo col-md-6">
+                        <h3 class="projectTitle">Skateboarding Trick List</h3>
+                        <h4 class="projectTags">Web App</h4>
+                        <h5 class="projectTech">Java, Spring, Bootstrap, HTML5, CSS3</h5>
+                        <p class="projectTextParagraph">
+                            Skateboarding Trick List is a CRUD web app. The backend is Java with the Spring MVC framework. The frontend is built with Bootstrap.
+                        </p>
+                    </div>
+                    <div class="projectImage col-md-6">
+                      <div class="projectImage">
+                          <a class="gallery img-responsive" href="images/skatetrick1.png"  data-lightbox="skatetrick" data-title="On this page you
+                          can add, edit, delete, or get more information about a skateboarding trick.">
+                              <img src="images/skatetrick1.png" class="img-responsive img-thumbnail">
+                          </a>
+                          <a class="gallery img-responsive" href="images/skatetrick2.png"  data-lightbox="skatetrick" data-title="Clicking
+                          on a trick name will display this modal with more information. The original click triggers an AJAX request to a REST endpoint."></a>
+                          <a class="gallery img-responsive" href="images/skatetrick3.png"  data-lightbox="skatetrick" data-title="Clicking the edit
+                          button displays this modal with information filled in via an AJAX request to a REST endpoint. Clicking the Edit Trick
+                           button will send an AJAX PUT request to a REST endpoint updating an in-memory HashMap."></a>
+                          <a class="gallery img-responsive" href="images/skatetrick4.png"  data-lightbox="skatetrick" data-title="An AJAX request retrives the matching values from the HashMap then lists them in a table."></a>
+                      </div>
+
+                        <div class="projectButtons pull-right">
+                            <a target="_blank" href="https://github.com/WJimmyCook/skateboarding-trick-list"><button class="btn btn-lg">GitHub</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project" id="flooringConsole">
+                <div class="row">
+                    <div class="projectInfo col-md-6">
+                        <h3 class="projectTitle">Flooring Console Program</h3>
+                        <h4 class="projectTags">Console App</h4>
+                        <h5 class="projectTech">Java, Spring, Bootstrap, HTML5, CSS3</h5>
+                        <p class="projectTextParagraph">
+                            Flooring Console is a Java CRUD console app to create and manage flooring orders for an imaginary company. The orders are written to files by date. This is one of the first full Java apps I made.
+                        </p>
+                    </div>
+                    <div class="projectImage col-md-6">
+                      <div class="projectImage">
+                          <a class="gallery img-responsive" href="images/flooring1.png"  data-lightbox="flooring" data-title="This is a
+                          console based app for a flooring company to manage orders. I had a little fun here with the colors.">
+                              <img src="images/flooring1.png" class="img-responsive img-thumbnail">
+                          </a>
+                          <a class="gallery img-responsive" href="images/flooring2.png"  data-lightbox="flooring" data-title="Showing a list
+                          of orders for 10/08/2016."></a>
+                          <a class="gallery img-responsive" href="images/flooring3.png"  data-lightbox="flooring" data-title="This screen shows
+                           the selection you can make to edit a saved order."></a>
+                          <a class="gallery img-responsive" href="images/flooring4.png"  data-lightbox="flooring" data-title="When adding a new
+                           order it is saved to a text file. There is a seperate file for each date."></a>
+                      </div>
+                        <div class="projectButtons pull-right">
+                            <a target="_blank" href="https://github.com/WJimmyCook/flooring-console"><button class="btn btn-lg">GitHub</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="skillList">
+            <div class="text-center">
+                <h2>Skills</h2>
+                <div class="col-sm-3 col-xs-6">
+                    <a href="">
+                        <div class="skill">
+                            <i class="devicon devicon-java-plain"></i>
+                            <h3 class="skill-name">Java</h3>
+                            <p class="skill-projects">3 Projects</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <a href="">
+                        <div class="skill">
+                            <i class="devicon devicon-javascript-plain"></i>
+                            <h3 class="skill-name">JavaScript</h3>
+                            <p class="skill-projects">3 Projects</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <a href="">
+                        <div class="skill">
+                            <i class="devicon devicon-angularjs-plain"></i>
+                            <h3 class="skill-name">angularjs</h3>
+                            <p class="skill-projects">1 Project</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <a href="">
+                        <div class="skill">
+                            <i class="devicon devicon-bootstrap-plain"></i>
+                            <h3 class="skill-name">Bootstrap</h3>
+                            <p class="skill-projects">3 Projects</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <a href="">
+                        <div class="skill">
+                            <i class="devicon devicon-css3-plain"></i>
+                            <h3 class="skill-name">CSS</h3>
+                            <p class="skill-projects">3 Projects</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <a href="">
+                        <div class="skill">
+                            <i class="devicon devicon-html5-plain"></i>
+                            <h3 class="skill-name">HTML</h3>
+                            <p class="skill-projects">3 Projects</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <a href="">
+                        <div class="skill">
+                            <i class="devicon devicon-git-plain"></i>
+                            <h3 class="skill-name">Git</h3>
+                            <p class="skill-projects">3 Projects</p>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="col-sm-3 col-xs-6">
+                    <a href="">
+                        <div class="skill">
+                            <i class="devicon devicon-jquery-plain"></i>
+                            <h3 class="skill-name">jQuery</h3>
+                            <p class="skill-projects">3 Projects</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <a href="">
+                        <div class="skill">
+                            <i class="devicon devicon-mysql-plain"></i>
+                            <h3 class="skill-name">MySQL</h3>
+                            <p class="skill-projects">2 Projects</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row text-center" id="footerLinks">
+            <a href="https://github.com/WJimmyCook" target="_blank"><i class="fa fa-github" aria-hidden="true"> Github</i></a>
+            <a href="https://www.linkedin.com/in/jimmy-cook" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"> LinkedIn</i></a>
+            <a href="mailto:wjimmycook+web@gmail.com" target="_top"><i class="fa fa-envelope" aria-hidden="true"> Email</i></a>
+            <i class="fa fa-file-pdf-o" aria-hidden="true"> PDF Resume</i>
+            <i class="fa fa-file-word-o" aria-hidden="true"> Word Resume</i>
+        </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="javascript/scripts.js"></script>
+    <script src="javascript/lightbox.min.js"></script>
+</body>
+
 </html>
