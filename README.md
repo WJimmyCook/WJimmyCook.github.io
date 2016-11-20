@@ -1,2 +1,2 @@
-# WJimmyCook.github.io
-Personal Website
+# Personal Website
+This is my website showing my portfolio.
