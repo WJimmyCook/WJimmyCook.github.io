@@ -1,0 +1,231 @@
+$first-color: hsl(200, 100%, 50%);
+$second-color: complement($first-color);
+
+@function is-cool-color($color) {
+	@return hue($color) < 310 and hue($color) > 140;
+}
+
+@function is-high-key-value($color) {
+	@return hue($color) > 20 and hue($color) < 190;
+}
+
+@function is-highest-key-value($color) {
+	@return hue($color) > 30 and hue($color) <90;
+}
+
+@function harmonious-mix($mix, $base) {
+	@if (is-cool-color($mix)){
+		@if is-high-key-value($base) {
+			@return mix($mix, $base, 11%);
+		}
+		@else {
+			@return mix($mix, $base, 16%);
+		}
+	}
+	@else {
+		@if is-high-key-value($base) {
+			@return mix($mix, $base, 13%);
+		}
+		@else {
+			@return mix($mix, $base, 23%);
+		}
+	}
+}
+
+
+
+@function mix-neutral($color) {
+	@if (is-highest-key-value($color)) {
+		@if is-high-key-value(complement($color)) {
+			@return mix(complement($color), $color, 19%);
+		}
+		@else {
+			@return mix(complement($color), $color, 13%);
+		}
+	}
+	@else if (is-high-key-value($color)) {
+		@if is-high-key-value(complement($color)) {
+			@return mix(complement($color), $color, 31%);
+		}
+		@else {
+			@return mix(complement($color), $color, 23%);
+		}
+	}
+	@else {
+		@if is-highest-key-value(complement($color)) {
+			@return mix(complement($color), $color, 31%);
+		}
+		@if is-high-key-value(complement($color)) {
+			@return mix(complement($color), $color, 26%);
+		}
+		@else {
+			@return mix(complement($color), $color, 23%);
+		}
+	}
+}
+
+
+@function pick-contrast($color) {
+	@if is-high-key-value($color){
+		@if lightness($color) < 30% {
+			@return lighten(complement($color), 86);
+		}
+		@else if lightness($color) > 70% {
+			@return darken(complement($color), 68);
+		}
+		@else {
+			@return darken(complement($color), 53);
+		}
+} @else {
+	@if lightness($color) < 30% {
+			@return lighten(complement($color), 86);
+		}
+		@else if lightness($color) > 70% {
+			@return darken(complement($color), 68);
+		}
+		@else {
+			@return lighten(complement($color), 53);
+		}
+	}
+}
+
+$primary-color: harmonious-mix($second-color, $first-color);
+$complementary-color: harmonious-mix($first-color, $second-color);
+
+$analogous-color: adjust-hue($complementary-color, -40);
+$complementary-analogous: mix($analogous-color, $complementary-color, 66);
+
+// Complementary Neutrals, highlight, midtone, shadow
+
+$complementary-neutral: mix-neutral($complementary-color);
+$complementary-neutral-light: lighten($complementary-neutral, 33);
+$complementary-neutral-dark: darken($complementary-neutral, 33);
+
+// Primary neutrals, highlight, midtone, shadow`
+
+$primary-neutral: mix-neutral($primary-color);
+$primary-neutral-light: lighten($primary-neutral, 33);
+$primary-neutral-dark: darken($primary-neutral, 33);
+
+// Primary tint and shade
+
+$primary-light: mix($primary-neutral-light, $primary-color, 45%);
+$primary-dark: mix($primary-neutral-dark, $primary-color, 45%);
+
+$complementary-light: mix($complementary-neutral-light, $complementary-color, 45%);
+
+// Pure neutrals, highlight, midtone, shadow
+
+$white: lighten($primary-neutral-light, 15);
+$neutral-gray: grayscale($primary-neutral);
+$primary-gray: mix($primary-color, $complementary-color, 30);
+$complementary-gray: mix($complementary-color, $primary-color, 63);
+$black: grayscale($complementary-neutral-dark);
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: $primary-color;
+}
+
+a {
+  color: $primary-color;
+}
+
+a:hover{
+  text-decoration: none;
+  color: $complementary-color;
+}
+
+img {
+  opacity: 1;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+img:hover {
+	opacity: .5;
+  background: #1abc9c;
+}
+
+#mainContainer {
+  background-color: $primary-color;
+}
+
+#name {
+  background-color: $white;
+}
+
+#bar {
+  background-color: $primary-color;
+  height: 65px;
+  width: 100%;
+  border-top: 20px solid $white;
+}
+
+#socialLinks {
+  background-color: $white;
+}
+
+#socialLinks .fa {
+  font-size: 44px;
+  padding: 15px;
+}
+
+#resumeLinks {
+  background-color: $white;
+}
+
+#resumeLinks .fa {
+  font-size: 24px;
+  padding: 25px;
+}
+
+#skillList {
+  margin-right: 15px;
+}
+
+#jobTitle {
+  font-size: large;
+}
+
+#projectsHeader {
+  color: $white;
+}
+
+#footerLinks {
+  background-color: $white;
+  padding: 30px;
+  margin-top: 40px;
+}
+
+#footerLinks .fa {
+  font-size: 32px;
+  padding: 15px;
+}
+
+.devicon {
+  font-size: 64px;
+  color: $complementary-color;
+}
+
+.skill {
+  padding-bottom: 10px;
+  padding-top: 20px;
+  margin-right: -28px;
+  margin-bottom: 2px;
+  background: $white;
+}
+
+.project {
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 2px;
+  background-color: $white;
+}
+
+.projectButtons {
+  padding-top: 10px;
+}
+
+.skill-name {
+  color: $complementary-color;
+}
