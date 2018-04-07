@@ -123,12 +123,13 @@ $complementary-gray: mix($complementary-color, $primary-color, 63);
 $black: grayscale($complementary-neutral-dark);
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: $primary-color;
+  font-family: 'Raleway', sans-serif;
+  background: $white;
 }
 
 a {
   color: $primary-color;
+  text-decoration: none;
 }
 
 a:hover{
@@ -136,96 +137,28 @@ a:hover{
   color: $complementary-color;
 }
 
-img {
-  opacity: 1;
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
-}
-img:hover {
-	opacity: .5;
-  background: #1abc9c;
-}
-
-#mainContainer {
-  background-color: $primary-color;
-}
-
-#name {
-  background-color: $white;
-}
-
-#bar {
-  background-color: $primary-color;
-  height: 65px;
-  width: 100%;
-  border-top: 20px solid $white;
-}
-
 #socialLinks {
   background-color: $white;
+  text-align: center;
 }
 
 #socialLinks .fa {
-  font-size: 44px;
-  padding: 15px;
+  font-size: 2.2em;
+  padding: 0.4em;
 }
 
-#resumeLinks {
-  background-color: $white;
+#content {
+	max-width: 42rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-#resumeLinks .fa {
-  font-size: 24px;
-  padding: 25px;
+#content-name {
+	font-size: 2.4em;
 }
 
-#skillList {
-  margin-right: 15px;
-}
-
-#jobTitle {
-  font-size: large;
-}
-
-#projectsHeader {
-  color: $white;
-}
-
-#footerLinks {
-  background-color: $white;
-  padding: 30px;
-  margin-top: 40px;
-}
-
-#footerLinks .fa {
-  font-size: 32px;
-  padding: 15px;
-}
-
-.devicon {
-  font-size: 64px;
-  color: $complementary-color;
-}
-
-.skill {
-  padding-bottom: 10px;
-  padding-top: 20px;
-  margin-right: -28px;
-  margin-bottom: 2px;
-  background: $white;
-}
-
-.project {
-  padding: 20px;
-  margin-bottom: 30px;
-  border-radius: 2px;
-  background-color: $white;
-}
-
-.projectButtons {
-  padding-top: 10px;
-}
-
-.skill-name {
-  color: $complementary-color;
+#content-description {
+	font-size: 2.4em;
 }
